@@ -34,3 +34,4 @@
 #self
 bin/*
 build
+.vscode
