@@ -1,5 +1,6 @@
 # Prerequisites
 *.d
+*.json
 
 # Compiled Object files
 *.slo
@@ -36,3 +37,4 @@ bin/*
 build
 .vscode
 src/*.json
+src
