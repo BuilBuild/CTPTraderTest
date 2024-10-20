@@ -14,6 +14,7 @@ list(APPEND HEADERPATH  ${PROJECT_SOURCE_DIR}/CTP6.3.15
                         ${PROJECT_SOURCE_DIR}/comm
                         ${PROJECT_SOURCE_DIR}/CTPTraAPI
     )
+set(CTPLIBDIR ${PROJECT_SOURCE_DIR}/CTP6.3.15/linux)
 
 # 库文件名字
 # set(SRCLIB src)

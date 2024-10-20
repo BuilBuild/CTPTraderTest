@@ -9,6 +9,9 @@ include_directories(${HEADERPATH})
 
 set(LIBRARY_OUTPUT_PATH ${LIBPATH})
 
+link_directories(${CTPLIBDIR})
 
 add_library(ctptra_api STATIC ${SRC})
+target_link_libraries(ctptra_api PUBLIC thosttraderapi_se)
+
 

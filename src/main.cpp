@@ -2,8 +2,8 @@
  * @Author: LeiJiulong
  * @Date: 2024-10-20 17:58:37
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-10-20 19:10:13
- * @Description:
+ * @LastEditTime: 2024-10-20 20:04:16
+ * @Description: 
  */
 
 #include <iostream>
@@ -46,21 +46,18 @@ int main()
         {
             m.FrontAddr = (*user_info)["frontAddr"].GetString();
         }
-        if (user_info->HasMember("BrokerID") && (*user_info)["BrokerID"].IsInt())
+        if (user_info->HasMember("BrokerID") && (*user_info)["BrokerID"].IsString())
         {
-            m.BrokerID = (*user_info)["BrokerID"].GetUint64();
+            m.BrokerID = (*user_info)["BrokerID"].GetString();
         }
-        if (user_info->HasMember("UserID") && (*user_info)["UserID"].IsInt())
+        if (user_info->HasMember("UserID") && (*user_info)["UserID"].IsString())
         {
-            m.UserId = (*user_info)["UserID"].GetUint64();
+            m.UserId = (*user_info)["UserID"].GetString();
         }
     }
 
-    m.UserName = "LeiJiulong";
     TraderSpi ts(m);
     ts.init();
 
-
-    
     return 0;
 }
