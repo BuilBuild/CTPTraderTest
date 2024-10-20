@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-10-20 17:58:37
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-10-20 20:04:16
+ * @LastEditTime: 2024-10-20 22:02:08
  * @Description: 
  */
 
@@ -16,7 +16,7 @@
 using namespace rapidjson;
 
 UserTraderLoginMsg m{};
-const char ConfigPath[] = "/home/leijiulong/git_project/CTPTraderTest/src/user_login_info.json";
+const char ConfigPath[] = "/home/leijiulong/git_project/CTPTraderTest/src/../user_login_info.json";
 
 int main()
 {
