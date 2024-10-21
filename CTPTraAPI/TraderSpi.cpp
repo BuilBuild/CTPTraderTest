@@ -2,7 +2,7 @@
  * @Author: LeiJiulong
  * @Date: 2024-10-20 17:32:51
  * @LastEditors: LeiJiulong && lei15557570906@outlook.com
- * @LastEditTime: 2024-10-20 21:52:08
+ * @LastEditTime: 2024-10-21 10:03:58
  * @Description:
  */
 #include "TraderSpi.h"
@@ -166,7 +166,7 @@ void TraderSpi::reqQueryInvestorPosition()
     CThostFtdcQryInvestorPositionField postionReq{};
     strcpy(postionReq.BrokerID, login_info.BrokerID.c_str());
     strcpy(postionReq.InvestorID, login_info.UserId.c_str());
-    strcpy(postionReq.InstrumentID, "au2412");
+    strcpy(postionReq.InstrumentID, "ag2412");
     std::this_thread::sleep_for(std::chrono::milliseconds(700)); // 有时候需要停顿一会才能查询成功
     int rt = g_pTradeUserApi->ReqQryInvestorPosition(&postionReq, requestID++);
     if (!rt)
@@ -196,7 +196,8 @@ void TraderSpi::init()
     g_pTradeUserApi->RegisterSpi(this);                           // 注册事件类
     g_pTradeUserApi->SubscribePublicTopic(THOST_TERT_RESTART);    // 订阅公共流
     g_pTradeUserApi->SubscribePrivateTopic(THOST_TERT_RESTART);   // 订阅私有流
-    g_pTradeUserApi->RegisterFront("tcp://180.168.146.187:10130");
+    // g_pTradeUserApi->RegisterFront("tcp://180.168.146.187:10130"); //7*24测试
+    g_pTradeUserApi->RegisterFront("tcp://180.168.146.187:10202");
     std::cout << "user name " << login_info.UserName << std::endl;
     std::cout << "broker id  " << login_info.BrokerID << std::endl;
     g_pTradeUserApi->Init();
